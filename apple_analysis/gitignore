@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Databricks config files
+.dbx/
+.databricks/
+*.dbc
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Mac system files
+.DS_Store
+
+# Python environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Log files
+*.log
+
+# Unit test cache
+.pytest_cache/
+coverage/
+*.cover
+
+# Output files
+*.csv
+*.parquet
+*.delta
+*.zip
+
+# Project-specific
+/output/

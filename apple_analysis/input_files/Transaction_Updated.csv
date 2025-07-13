@@ -1,0 +1,11 @@
+transaction_id,customer_id,product_name,transaction_date
+11,105,iPhone,2022-02-01
+12,106,iPhone,2022-02-02
+13,107,AirPods,2022-02-03
+14,105,AirPods,2022-02-04
+15,108,iPhone,2022-02-05
+16,106,MacBook,2022-02-06
+17,107,iPhone,2022-02-07
+18,105,MacBook,2022-02-08
+19,108,AirPods,2022-02-09
+20,106,AirPods,2022-02-10
