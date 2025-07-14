@@ -1,6 +1,6 @@
 # Apple Purchase Data Pipeline
 
-This project showcases a modular ETL pipeline built with PySpark on Databricks, designed to analyze customer purchase behavior. The goal? Understand product purchase patterns — like who buys AirPods after buying an iPhone — and much more. You can read more about this on [my blog](https://medium.com/@data_ig/apple-purchase-data-engineering-project-740eff20e51a)
+This project showcases a modular ETL pipeline built with PySpark on Databricks, designed to analyze customer purchase behavior. The goal? Understand product purchase patterns like who buys AirPods after buying an iPhone and much more. You can read more about this on [my blog](https://medium.com/@data_ig/apple-purchase-data-engineering-project-740eff20e51a)
 
 This work was inspired by [Ankur Rajan](https://www.youtube.com/watch?v=BlWS4foN9cY&t=114s)'s lecture. I must say, he’s a genius at simplifying complex ideas.
 
@@ -8,9 +8,9 @@ This work was inspired by [Ankur Rajan](https://www.youtube.com/watch?v=BlWS4foN
 
 ## 🔍 The Problem
 
-We had a simple challenge: identify how customers buy across Apple products — which products come first, how quickly do they return for more, and what combinations sell together?
+We had a simple challenge: identify how customers buy across Apple products which products come first, how quickly do they return for more, and what combinations sell together?
 
-To solve that, we built five workflows using PySpark — each answering a different business question.
+To solve that, we built five workflows using PySpark, each answering a different business question.
 
 ---
 
