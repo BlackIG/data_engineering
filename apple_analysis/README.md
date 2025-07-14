@@ -2,7 +2,7 @@
 
 This project showcases a modular ETL pipeline built with PySpark on Databricks, designed to analyze customer purchase behavior. The goal? Understand product purchase patterns — like who buys AirPods after buying an iPhone — and much more.
 
-This work was inspired by Ankur Rajan’s demo lecture. I must say, he’s a genius at simplifying complex ideas.
+This work was inspired by [Ankur Rajan](https://www.youtube.com/watch?v=BlWS4foN9cY&t=114s)'s lecture. I must say, he’s a genius at simplifying complex ideas.
 
 ---
 
