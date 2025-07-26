@@ -10,6 +10,7 @@ venv/
 env/
 ENV/
 *.env
+myenv
 
 # Streamlit & Python cache
 .streamlit/config.toml
