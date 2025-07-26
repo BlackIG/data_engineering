@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.venv/
+env/
+ENV/
+*.env
+
+# Streamlit & Python cache
+.streamlit/config.toml
+.streamlit/secrets.toml
+*.pyc
+*.pyo
+
+# Jupyter notebooks (if any) checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Log files
+*.log
+
+# Data files (optional - if they’re large or generated)
+*.csv
+*.parquet
+*.zip
+
+# Ignore built outputs
+dist/
+build/
+*.egg-info/
+
+# Images and static assets (optional if generated or too large)
+assets/*

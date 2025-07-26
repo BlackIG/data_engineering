@@ -1,0 +1,15 @@
+# Minimal precise requirements
+
+streamlit>=1.32.0
+python-dotenv>=1.0.0
+pymongo[srv]>=4.5.0
+openai>=1.14.3
+Pillow>=10.0.0  # Required for handling images via PIL
+
+
+# == Clean Install Steps
+# python3 -m venv myenv
+# source myenv/bin/activate
+# pip install -r requirements.txt
+# == run the script with streamlit run app.py
+
