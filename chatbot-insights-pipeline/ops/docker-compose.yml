@@ -1,0 +1,41 @@
+# ops/docker-compose.yml
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: ops/Dockerfile
+    image: salesiq-etl:dev
+    container_name: salesiq-etl
+    env_file:
+      - ../.env
+    environment:
+      - PORT=8080
+      - GOOGLE_APPLICATION_CREDENTIALS=/secrets/key.json
+    ports:
+      # Host:Container — change left-hand port if 8080 is busy on your machine
+      - "8080:8080"
+    volumes:
+      # Mount your service account key from repo-root/keyfile/...
+      - ../keyfile/etlsa_key.json:/secrets/key.json:ro
+    restart: unless-stopped
+    # If on Apple Silicon and you hit image issues, uncomment:
+    # platform: linux/amd64
+
+  run-once:
+    build:
+      context: ..
+      dockerfile: ops/Dockerfile
+    image: salesiq-etl:dev
+    container_name: salesiq-etl-once
+    command: python -u main.py
+    env_file:
+      - ../.env
+    environment:
+      - PORT=8080
+      - GOOGLE_APPLICATION_CREDENTIALS=/secrets/key.json
+    volumes:
+      - ../keyfile/etlsa_key.json:/secrets/key.json:ro
+    restart: "no"
+    # platform: linux/amd64

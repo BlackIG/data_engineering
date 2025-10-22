@@ -1,0 +1,100 @@
+# ------------------------------
+# Python
+# ------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+*.spec
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# ------------------------------
+# Logs and runtime data
+# ------------------------------
+*.log
+*.out
+*.err
+*.jsonl
+logs/
+tmp/
+data/
+*.sqlite
+.DS_Store
+
+# ------------------------------
+# IDEs and editors
+# ------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# ------------------------------
+# Cloud / credentials / secrets
+# ------------------------------
+# Never commit environment variables or credentials!
+.env.*
+.envrc
+*.key
+*.pem
+*.p12
+*.json  # e.g., service account keys
+secrets/
+credentials/
+
+# ------------------------------
+# GCP / Docker
+# ------------------------------
+# Docker build artifacts
+Dockerfile~
+.dockerignore
+*.tar
+# GCP local configs
+.gcloud/
+.cloudbuild/
+# BigQuery temp outputs
+*.bq
+*.bqtmp
+
+# ------------------------------
+# Byte-compiled / test artifacts
+# ------------------------------
+.pytest_cache/
+.coverage
+.tox/
+.nox/
+htmlcov/
+
+# ------------------------------
+# Node / frontend (if ever added)
+# ------------------------------
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# ------------------------------
+# Misc
+# ------------------------------
+# Ignore backup / temp files / key files (a dir containing json key file)
+*~
+Thumbs.db
+keyfile/

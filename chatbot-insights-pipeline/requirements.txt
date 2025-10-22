@@ -1,0 +1,25 @@
+# --- Core ---
+requests>=2.31.0,<3.0.0
+python-dateutil>=2.8.2,<3.0.0
+tzdata>=2024.1
+python-dotenv>=1.0.1
+tqdm>=4.66.0,<5.0.0
+tenacity>=8.2.3,<9.0.0
+
+# --- Google Cloud ---
+google-cloud-storage>=2.14.0,<3.0.0
+google-cloud-bigquery>=3.25.0,<4.0.0
+# google-cloud-bigquery-storage is optional; add if you later read via BQ Storage API
+# google-cloud-bigquery-storage>=2.25.0,<3.0.0
+
+# --- Web server ---
+Flask==3.0.0
+gunicorn>=22.0.0,<23.0.0
+
+# --- Leave urllib3 to requests to manage; avoid pinning to prevent conflicts
+# urllib3
+
+# Optional (handy for future improvements)
+# loguru>=0.7.2          # for rich logging
+# orjson>=3.10.0         # faster JSON serialization
+# backoff>=2.2.1         # alt retry lib

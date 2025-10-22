@@ -1,0 +1,27 @@
+#-------------LOCAL TESTING ---------------#
+#1. Create & activate a virtual env
+# python3.11 -m venv .venv
+# source .venv/bin/activate    
+
+#2. upgrade pip, then install from requirements.txt
+# pip install -U pip
+# python3.11 -m pip install -r requirements.txt
+
+#3. Run the server, see request logs inline
+# gunicorn -b 0.0.0.0:8081 -k gthread --threads 8 --timeout 3600 --access-logfile - --log-level info app:app
+
+#4. Trigger app from another terminal. Should return {"ok":true}
+#curl http://localhost:8081/
+
+#5 Fire the job from this new terminal and watch the logs from the gunicorn terminal
+#curl -X POST http://localhost:8081/run
+
+#6. To stop terminal
+# Ctrl + C in the Gunicorn terminal.
+
+#------------- SYNTAX CHECK ----------
+# python3.11 -m py_compile main.py
+
+#-------------DEPLOYMENT  ---------------#
+# Skipping docker, because I will use Cloud Run and then schedule it
+# Google will build the container for you from the source (requirements.txt + your Flask app:app) using buildpacks.
