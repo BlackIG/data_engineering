@@ -11,6 +11,8 @@ import logging
 import os
 import time
 from contextlib import contextmanager
+from datetime import datetime, timezone
+
 
 
 def get_logger(name: str = "salesiq") -> logging.Logger:
@@ -29,29 +31,28 @@ def get_logger(name: str = "salesiq") -> logging.Logger:
     )
     return logging.getLogger(name)
 
+def _utc_now_iso():
+    # e.g., 2025-10-22T09:15:30.123456+00:00
+    return datetime.now(timezone.utc).isoformat()
+
+
 
 @contextmanager
 def log_section(log: logging.Logger, name: str, **kv):
     """
-    Context manager to log START/END/FAIL for a named section.
-
-    Parameters
-    ----------
-    log : logging.Logger
-        Logger to write to.
-    name : str
-        Logical section name (e.g., "export-chats").
-    **kv :
-        Extra key/value context that will be stringified in START.
+    Log START/END/FAIL with timestamps and duration_ms.
     """
+    start_ts = _utc_now_iso()
     t0 = time.perf_counter()
     ctx = " ".join(f"{k}={v}" for k, v in kv.items()) if kv else ""
-    log.info("START %s %s", name, ctx)
+    log.info("START %s %s start_ts=%s", name, ctx, start_ts)
     try:
         yield
         dur_ms = int((time.perf_counter() - t0) * 1000)
-        log.info("END   %s duration_ms=%d", name, dur_ms)
+        end_ts = _utc_now_iso()
+        log.info("END   %s duration_ms=%d start_ts=%s end_ts=%s", name, dur_ms, start_ts, end_ts)
     except Exception as e:
         dur_ms = int((time.perf_counter() - t0) * 1000)
-        log.exception("FAIL  %s duration_ms=%d error=%s", name, dur_ms, e)
+        end_ts = _utc_now_iso()
+        log.exception("FAIL  %s duration_ms=%d start_ts=%s end_ts=%s error=%s", name, dur_ms, start_ts, end_ts,  e)
         raise
