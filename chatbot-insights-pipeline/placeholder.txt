@@ -8,13 +8,13 @@
 # python3.11 -m pip install -r requirements.txt
 
 #3. Run the server, see request logs inline
-# gunicorn -b 0.0.0.0:8081 -k gthread --threads 8 --timeout 3600 --access-logfile - --log-level info app:app
+# gunicorn -b 0.0.0.0:8080 -k gthread --threads 8 --timeout 3600 --access-logfile - --log-level info app:app
 
 #4. Trigger app from another terminal. Should return {"ok":true}
-#curl http://localhost:8081/
+#curl http://localhost:8080/
 
 #5 Fire the job from this new terminal and watch the logs from the gunicorn terminal
-#curl -X POST http://localhost:8081/run
+#curl -X POST http://localhost:8080/run
 
 #6. To stop terminal
 # Ctrl + C in the Gunicorn terminal.
