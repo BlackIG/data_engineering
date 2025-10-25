@@ -1,0 +1,16 @@
+-- BQ SQL
+
+-- Replace `my_project.zoho_desk.salesiq_conversation_runs` with your target
+
+--This table keeps the number of conversations fetched anytime the etl is run
+CREATE TABLE `my_project.zoho_desk.salesiq_conversation_runs` (
+  run_timestamp     TIMESTAMP,
+  department_id     STRING,
+  status            STRING,
+  from_time         TIMESTAMP,
+  to_time           TIMESTAMP,
+  num_conversations INT64,
+  gcs_uri           STRING,
+  run_id            STRING
+)
+PARTITION BY DATE(run_timestamp);
