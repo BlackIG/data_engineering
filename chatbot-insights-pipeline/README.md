@@ -194,5 +194,11 @@ Optionally, you can enable a lifecycle rule to **auto-delete files older than 30
 
 ---
 
+### 📚 Reference
+
+**SalesIQ REST API Documentation**  
+[https://www.zoho.com/salesiq/help/developer-section/rest-api-prerequisite-v2.html](https://www.zoho.com/salesiq/help/developer-section/rest-api-prerequisite-v2.html)
+
+
 ### 🏁 End Result
 A fully automated, serverless ETL pipeline that extracts Zoho SalesIQ chat and tag data, loads it into BigQuery, and maintains clean, deduplicated datasets ready for reporting and modeling.
