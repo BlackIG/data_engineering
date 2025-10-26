@@ -103,7 +103,7 @@ pip install -r requirements.txt
 
 ### 2️⃣ Configure `.env`
 ```env
-GOOGLE_CLOUD_PROJECT=gold-courage-194810
+GOOGLE_CLOUD_PROJECT=my_project_id
 BQ_DATASET=zoho_desk
 GCS_BUCKET=gs://salesiq_lake
 SLACK_WEBHOOK=https://hooks.slack.com/services/XXX/YYY/ZZZ
