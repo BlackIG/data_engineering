@@ -38,7 +38,7 @@ Cloud Scheduler (daily trigger)
 | `API_VERSION` | API version (e.g. `v2`) |
 | `SCREEN_NAME` | SalesIQ screen/portal name |
 | `SLACK_WEBHOOK` | Slack webhook URL for alerts |
-| `PORT` | Server port (default: 8080) |
+| `LOCAL_STAGING_DIR` | Default local staging directory (`/tmp/salesiq`) |
 
 > 📘 For local development, store these in a `.env` file (not committed).
 
