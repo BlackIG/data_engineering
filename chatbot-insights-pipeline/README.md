@@ -197,7 +197,8 @@ Optionally, you can enable a lifecycle rule to **auto-delete files older than 30
 ### 📚 Reference
 
 **SalesIQ REST API Documentation**  
-[https://www.zoho.com/salesiq/help/developer-section/rest-api-prerequisite-v2.html](https://www.zoho.com/salesiq/help/developer-section/rest-api-prerequisite-v2.html)
+[Developer docs](https://www.zoho.com/salesiq/help/developer-section/rest-api-prerequisite-v2.html)
+[Video guide to generating Oauth token](https://drive.google.com/file/d/1t6rPbA6K8MWJqLrP-qh9I2P0bCoyTNnr/view?usp=sharing)
 
 
 ### 🏁 End Result
