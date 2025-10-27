@@ -201,6 +201,10 @@ Optionally, you can enable a lifecycle rule to **auto-delete files older than 30
 
 [Video guide to generating Oauth token](https://drive.google.com/file/d/1t6rPbA6K8MWJqLrP-qh9I2P0bCoyTNnr/view?usp=sharing)
 
+> **📝 Note**  
+> - Remove the `PORT` environment variable when deploying to Cloud Run (it’s automatically managed).  
+> - On Cloud Run, the container filesystem is **read-only** — the **only writable path is `/tmp`**. Use this directory for any temporary or local file operations.
+
 
 ### 🏁 End Result
 A fully automated, serverless ETL pipeline that extracts Zoho SalesIQ chat and tag data, loads it into BigQuery, and maintains clean, deduplicated datasets ready for reporting and modeling.
