@@ -50,4 +50,4 @@ def run():
 
 if __name__ == "__main__":
     # Local dev only; in Cloud Run we use gunicorn
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT")))
+    app.run(host="0.0.0.0", port=8080)
