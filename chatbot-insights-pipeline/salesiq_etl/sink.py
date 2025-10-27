@@ -12,11 +12,15 @@ from __future__ import annotations
 
 import json
 import os
-import pathlib
 import tempfile
+from pathlib import Path
 from typing import Any, Dict, Iterable, Optional
 
 from google.cloud import storage
+
+# On Cloud Run the filesystem is read-only except /tmp
+BASE = Path(os.getenv("LOCAL_STAGING_DIR", "/tmp/salesiq"))
+
 
 
 class Sink:
@@ -61,12 +65,17 @@ class Sink:
         Optional[str]
             Absolute path to the written file, or None if no records.
         """
+        #  Using a writable base directory (Cloud Run allows /tmp)
+        Path(BASE).mkdir(parents=True, exist_ok=True)
         if local_path is None:
-            fd, tmp = tempfile.mkstemp(prefix="salesiq_", suffix=".jsonl", dir="/tmp")
+            fd, tmp = tempfile.mkstemp(prefix="salesiq_", suffix=".jsonl", dir=BASE)
             os.close(fd)
             local_path = tmp
         else:
-            pathlib.Path(local_path).parent.mkdir(parents=True, exist_ok=True)
+            # Force relative paths to live under /tmp
+            if not os.path.isabs(local_path):
+                local_path = os.path.join(BASE, local_path)
+            Path(local_path).parent.mkdir(parents=True, exist_ok=True)
 
         wrote = False
         try:
